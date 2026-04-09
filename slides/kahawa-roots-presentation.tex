@@ -1,0 +1,324 @@
+\documentclass[aspectratio=169]{beamer}
+
+% ─── Theme & Colors ───
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% Custom Kahawa Roots color palette
+\definecolor{kahawaBrown}{RGB}{101, 67, 33}
+\definecolor{kahawaGreen}{RGB}{46, 125, 50}
+\definecolor{kahawaGold}{RGB}{198, 134, 66}
+\definecolor{kahawaDark}{RGB}{30, 30, 30}
+\definecolor{kahawaLight}{RGB}{250, 245, 235}
+\definecolor{gcpBlue}{RGB}{66, 133, 244}
+\definecolor{bronzeColor}{RGB}{191, 54, 12}
+\definecolor{silverColor}{RGB}{21, 101, 192}
+\definecolor{goldColor}{RGB}{245, 127, 23}
+
+\setbeamercolor{palette primary}{bg=kahawaBrown, fg=white}
+\setbeamercolor{palette secondary}{bg=kahawaGreen, fg=white}
+\setbeamercolor{palette tertiary}{bg=kahawaDark, fg=white}
+\setbeamercolor{title}{fg=kahawaBrown}
+\setbeamercolor{frametitle}{bg=kahawaBrown, fg=white}
+\setbeamercolor{block title}{bg=kahawaGreen, fg=white}
+\setbeamercolor{block body}{bg=kahawaLight}
+\setbeamercolor{item}{fg=kahawaBrown}
+
+% ─── Packages ───
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{multicol}
+
+% SQL code styling
+\lstdefinestyle{sql}{
+    language=SQL,
+    basicstyle=\ttfamily\tiny,
+    keywordstyle=\color{kahawaGreen}\bfseries,
+    stringstyle=\color{kahawaBrown},
+    commentstyle=\color{gray}\itshape,
+    backgroundcolor=\color{kahawaLight},
+    frame=single,
+    framerule=0.5pt,
+    rulecolor=\color{kahawaBrown},
+    breaklines=true,
+    showstringspaces=false,
+    tabsize=2
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=kahawaBrown,
+    urlcolor=gcpBlue
+}
+
+% ─── Title Info ───
+\title[Kahawa Roots]{\textbf{Kahawa Roots} \\ \large Traceability Platform — Pre-Interview Task}
+\subtitle{Tracking Coffee from Kenya's Farms to the UK}
+\author{Shree Hari Anbazhagan}
+\institute{Developer Intern Candidate}
+\date{April 2026}
+
+% ─── Remove navigation symbols ───
+\setbeamertemplate{navigation symbols}{}
+
+% ─── Slide numbers ───
+\setbeamertemplate{footline}{
+    \hfill\insertframenumber/\inserttotalframenumber\hspace*{0.5cm}\vspace*{0.3cm}
+}
+
+\begin{document}
+
+% ══════════════════════════════════════════════════════════════
+% SLIDE 1: TITLE + WHO I AM + PROOF
+% ══════════════════════════════════════════════════════════════
+\begin{frame}
+
+\begin{columns}[T]
+
+\begin{column}{0.55\textwidth}
+    \vspace{1em}
+    {\LARGE\textbf{\textcolor{kahawaBrown}{Kahawa Roots}}}\\[0.3em]
+    {\large Traceability Platform}\\[0.1em]
+    {\small\textit{Tracking Coffee from Kenya's Farms to the UK}}\\[1.5em]
+
+    {\normalsize\textbf{Shree Hari Anbazhagan}}\\[0.5em]
+    \begin{tabular}{@{}ll}
+        \faEnvelope & \href{mailto:shreeharianbazhagan@gmail.com}{shreeharianbazhagan@gmail.com} \\
+        \faPhone & 07721046613 \\
+    \end{tabular}
+
+    \vspace{1.5em}
+    {\footnotesize\textcolor{gray}{Pre-Interview Task — Developer Intern — April 2026}}
+\end{column}
+
+\begin{column}{0.42\textwidth}
+    \vspace{1em}
+    \begin{block}{\faRocket\ Proof: I've Built This Before}
+        \small
+        My live full-stack project on the \textbf{same GCP infrastructure} I'm proposing:
+
+        \vspace{0.3em}
+        \begin{itemize}
+            \item[\faGlobe] \scriptsize{\href{https://deltaed-frontend-93684845515.europe-west2.run.app}{\textcolor{gcpBlue}{DeltaEd — Live on GCP Cloud Run}}}
+            \item[\faCloud] GCP Cloud Run, \texttt{europe-west2} (London)
+            \item[\faDocker] Dockerized, full stack
+            \item[\faCode] React + Next.js + PostgreSQL
+        \end{itemize}
+
+        \vspace{0.3em}
+        \scriptsize{\textit{happy to walk through the architecture if interested.}}
+    \end{block}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% ══════════════════════════════════════════════════════════════
+% SLIDE 2: HOW I'D BUILD THIS + NON-TECHNICAL ACCESS
+% ══════════════════════════════════════════════════════════════
+\begin{frame}{Part 1 \& 3: How I'd Build This}
+
+\begin{columns}[T]
+
+\begin{column}{0.55\textwidth}
+
+\textbf{\faDatabase\ How Data is Stored \& Recorded}
+\begin{itemize}
+    \item every shipment gets a unique ID when its first recorded
+    \item raw data (form/CSV) goes straight into \textbf{GCP Cloud Storage} as a backup — never touched, never deleted
+    \item a \textbf{Cloud Function} auto-triggers, cleans and validates the data
+    \item clean data lands in \textbf{Cloud SQL (PostgreSQL)} — 3 tables: \texttt{farmers}, \texttt{shipments}, \texttt{shipment\_stages}
+    \item each stage (farm → processing → export → UK) is a row in \texttt{shipment\_stages} with timestamps and GPS
+\end{itemize}
+
+\textbf{\faQrcode\ QR Code → Webpage}
+\begin{itemize}
+    \item QR is generated per shipment, encodes a URL like \texttt{/trace/SH-2026-001}
+    \item scanning opens a public page with a \textbf{map} (Kenya → UK) + journey timeline + farmer details
+\end{itemize}
+
+\end{column}
+
+\begin{column}{0.42\textwidth}
+
+\textbf{\faUserFriends\ Non-Technical Data Entry (Part 3)}
+
+\vspace{0.3em}
+the founders (Rupal \& Cetric) aren't developers — so the system has two simple ways to add data:
+
+\vspace{0.5em}
+\begin{block}{\faWpforms\ Option 1: Web Form}
+    \begin{itemize}
+        \item fill in a simple form on the admin dashboard
+        \item one shipment at a time
+        \item no coding, no terminal, no SQL
+    \end{itemize}
+\end{block}
+
+\begin{block}{\faFileExcel\ Option 2: CSV/Excel Upload}
+    \begin{itemize}
+        \item drag and drop a spreadsheet
+        \item bulk import — great when cooperatives send batch data
+        \item system validates every row automatically
+    \end{itemize}
+\end{block}
+
+\vspace{0.3em}
+\footnotesize{\textit{both options feed into the same REST API → same validation → same database. zero coding needed from the user.}}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% ══════════════════════════════════════════════════════════════
+% SLIDE 3: TECHNOLOGY CHOICES + BONUS
+% ══════════════════════════════════════════════════════════════
+\begin{frame}{Part 2: Technology Choices + Bonus}
+
+\begin{columns}[T]
+
+\begin{column}{0.48\textwidth}
+
+\textbf{\faTools\ Tech Stack \& Why}
+
+\vspace{0.3em}
+\footnotesize
+\begin{tabular}{p{2.2cm} p{4.5cm}}
+    \toprule
+    \textbf{Component} & \textbf{Choice \& Why} \\
+    \midrule
+    \textbf{Cloud} & \textbf{GCP} (London region) \\
+    & — \textcolor{kahawaGreen}{\textbf{up to \$200K startup credits}} \\
+    & — UK data centre = GDPR friendly \\
+    & — Cloud Run scales to zero = pay nothing when idle \\
+    \midrule
+    \textbf{Backend} & \textbf{Python + REST API} on Cloud Run \\
+    & — fast to build, great for data validation \\
+    \midrule
+    \textbf{Frontend} & \textbf{Next.js (React)} on Cloud Run \\
+    & — SSR for fast QR page loads, SEO friendly \\
+    \midrule
+    \textbf{Database} & \textbf{Cloud SQL (PostgreSQL)} \\
+    & — relational, sub-10ms reads for QR scans \\
+    \midrule
+    \textbf{Storage} & \textbf{Cloud Storage} buckets \\
+    & — immutable raw data backup \\
+    \midrule
+    \textbf{Processing} & \textbf{Cloud Functions} \\
+    & — event-driven, auto-triggered on new data \\
+    \midrule
+    \textbf{IaC} & \textbf{Terraform} — infra as code, repeatable \\
+    \midrule
+    \textbf{CI/CD} & \textbf{GitHub Actions} — auto deploy on push \\
+    \midrule
+    \textbf{Maps} & \textbf{Google Maps API} — native to GCP \\
+    \bottomrule
+\end{tabular}
+
+\end{column}
+
+\begin{column}{0.48\textwidth}
+
+\textbf{\faLayerGroup\ Data Architecture: Medallion Pattern}
+
+\vspace{0.3em}
+\begin{tikzpicture}[
+    layer/.style={rounded corners=4pt, minimum width=5.5cm, minimum height=1.1cm, text=white, font=\small\bfseries, align=center},
+    arrow/.style={->, thick, gray}
+]
+    \node[layer, fill=bronzeColor] (bronze) at (0,3) {Bronze Layer \\ \tiny Raw CSV/JSON in Cloud Storage};
+    \node[layer, fill=silverColor] (silver) at (0,1.6) {Silver Layer \\ \tiny Clean data in PostgreSQL};
+    \node[layer, fill=goldColor] (gold) at (0,0.2) {Gold Layer \\ \tiny QR Pages + BigQuery (future)};
+
+    \draw[arrow] (bronze) -- (silver);
+    \draw[arrow] (silver) -- (gold);
+\end{tikzpicture}
+
+\vspace{0.5em}
+\textbf{\faCode\ Bonus: Database Schema}
+
+\begin{lstlisting}[style=sql]
+CREATE TABLE farmers (
+  id         UUID PRIMARY KEY,
+  name       VARCHAR(100),
+  region     VARCHAR(100), -- e.g. Mt. Elgon
+  farm_size  DECIMAL,      -- hectares
+  latitude   DECIMAL(9,6),
+  longitude  DECIMAL(9,6),
+  cooperative VARCHAR(100)
+);
+
+CREATE TABLE shipments (
+  id         UUID PRIMARY KEY,
+  batch_id   VARCHAR(50) UNIQUE,
+  farmer_id  UUID REFERENCES farmers(id),
+  grade      VARCHAR(10), -- AA, AB, PB
+  weight_kg  DECIMAL,
+  status     VARCHAR(20),
+  created_at TIMESTAMP DEFAULT NOW()
+);
+
+CREATE TABLE shipment_stages (
+  id          UUID PRIMARY KEY,
+  shipment_id UUID REFERENCES shipments(id),
+  stage       VARCHAR(50), -- farm, processing,
+                           -- export, import
+  location    VARCHAR(100),
+  timestamp   TIMESTAMP,
+  notes       TEXT
+);
+\end{lstlisting}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+% ══════════════════════════════════════════════════════════════
+% SLIDE 4: FULL ARCHITECTURE DIAGRAM
+% ══════════════════════════════════════════════════════════════
+\begin{frame}{System Architecture}
+
+\begin{center}
+
+% ── Replace this with your screenshot ──
+% 1. Export your draw.io diagram as PNG (File → Export as → PNG, 2x scale)
+% 2. Save as "architecture.png" in the same folder as this .tex file
+% 3. Uncomment the line below and delete the placeholder box
+
+% \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{architecture.png}
+
+% ── PLACEHOLDER — delete this block after adding your image ──
+\begin{tikzpicture}
+    \draw[kahawaBrown, thick, dashed, rounded corners] (0,0) rectangle (14,6.5);
+    \node[text=gray, font=\Large] at (7,3.25) {
+        \parbox{10cm}{\centering
+            \textbf{YOUR ARCHITECTURE DIAGRAM HERE}\\[0.5em]
+            \normalsize Export from draw.io as PNG\\
+            and replace this placeholder\\[0.5em]
+            \small File → Export as → PNG (2x scale)\\
+            Save as \texttt{architecture.png}
+        }
+    };
+\end{tikzpicture}
+% ── END PLACEHOLDER ──
+
+\end{center}
+
+\vspace{-0.3em}
+{\footnotesize \textcolor{gcpBlue}{\faLink\ \href{https://viewer.diagrams.net/?tags=\%7B\%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=kahawa-roots-architecture.drawio&dark=auto}{Click here for interactive architecture diagram}}}
+
+\end{frame}
+
+% Slide 5 merged into Slide 1 — free slot available
+
+\end{document}

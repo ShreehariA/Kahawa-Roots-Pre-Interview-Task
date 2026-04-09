@@ -1,28 +1,76 @@
 \documentclass[aspectratio=169]{beamer}
 
-% ─── Theme & Colors ───
-\usetheme{Madrid}
-\usecolortheme{default}
+% ─── Theme ───
+% Clean minimal theme — let the colors do the talking
+\usetheme{default}
+\useinnertheme{rounded}
+\useoutertheme{default}
 
-% Custom Kahawa Roots color palette
-\definecolor{kahawaBrown}{RGB}{101, 67, 33}
-\definecolor{kahawaGreen}{RGB}{46, 125, 50}
-\definecolor{kahawaGold}{RGB}{198, 134, 66}
-\definecolor{kahawaDark}{RGB}{30, 30, 30}
-\definecolor{kahawaLight}{RGB}{250, 245, 235}
+% ═══════════════════════════════════════════════════
+% Kahawa Roots Brand Colors (matched to website)
+% ═══════════════════════════════════════════════════
+% Primary: #51624D green from website, coffee brown for accents, white everything else
+
+% Primary brand colors
+\definecolor{kahawaGreen}{RGB}{46, 91, 74}         % #2E5B4A — the main brand green (matched to website)
+\definecolor{kahawaGreenDark}{RGB}{34, 70, 56}     % darker shade for hover/depth
+\definecolor{kahawaBrown}{RGB}{101, 67, 33}       % coffee brown — subsections/accents
+\definecolor{kahawaBrownLight}{RGB}{139, 100, 60} % lighter brown for subtle elements
+\definecolor{kahawaWhite}{RGB}{255, 255, 255}     % clean white — backgrounds
+\definecolor{textDark}{RGB}{51, 51, 51}           % #333 — clean professional dark text
+
+% Utility colors (kept for diagrams)
 \definecolor{gcpBlue}{RGB}{66, 133, 244}
-\definecolor{bronzeColor}{RGB}{191, 54, 12}
+\definecolor{bronzeColor}{RGB}{166, 80, 30}
 \definecolor{silverColor}{RGB}{21, 101, 192}
-\definecolor{goldColor}{RGB}{245, 127, 23}
+\definecolor{goldColor}{RGB}{198, 134, 46}
 
-\setbeamercolor{palette primary}{bg=kahawaBrown, fg=white}
-\setbeamercolor{palette secondary}{bg=kahawaGreen, fg=white}
-\setbeamercolor{palette tertiary}{bg=kahawaDark, fg=white}
-\setbeamercolor{title}{fg=kahawaBrown}
-\setbeamercolor{frametitle}{bg=kahawaBrown, fg=white}
-\setbeamercolor{block title}{bg=kahawaGreen, fg=white}
-\setbeamercolor{block body}{bg=kahawaLight}
-\setbeamercolor{item}{fg=kahawaBrown}
+% ═══════════════════════════════════════════════════
+% Apply brand colors to Beamer elements
+% ═══════════════════════════════════════════════════
+
+% Background: clean white
+\setbeamercolor{background canvas}{bg=kahawaWhite}
+
+% Frame titles: brand green bar with white text
+\setbeamercolor{frametitle}{bg=kahawaGreen, fg=kahawaWhite}
+\setbeamertemplate{frametitle}{
+    \vspace{0.15cm}
+    \begin{beamercolorbox}[wd=\paperwidth, ht=0.7cm, dp=0.2cm, leftskip=0.5cm]{frametitle}
+        \usebeamerfont{frametitle}\insertframetitle
+    \end{beamercolorbox}
+}
+
+% Title page
+\setbeamercolor{title}{fg=kahawaGreen}
+\setbeamercolor{subtitle}{fg=kahawaBrown}
+\setbeamercolor{author}{fg=textDark}
+\setbeamercolor{institute}{fg=kahawaBrown}
+
+% Blocks: green header, white body
+\setbeamercolor{block title}{bg=kahawaGreen, fg=kahawaWhite}
+\setbeamercolor{block body}{bg=kahawaWhite, fg=textDark}
+
+% Alert blocks: brown header, white body
+\setbeamercolor{block title alerted}{bg=kahawaBrown, fg=kahawaWhite}
+\setbeamercolor{block body alerted}{bg=kahawaWhite, fg=textDark}
+
+% Items: green bullets, brown sub-bullets
+\setbeamercolor{item}{fg=kahawaGreen}
+\setbeamercolor{subitem}{fg=kahawaBrown}
+\setbeamercolor{itemize item}{fg=kahawaGreen}
+\setbeamercolor{itemize subitem}{fg=kahawaBrown}
+\setbeamercolor{description item}{fg=kahawaBrown}
+
+% Normal text
+\setbeamercolor{normal text}{fg=textDark, bg=kahawaWhite}
+
+% Footer bar: green with white text
+\setbeamercolor{footline}{bg=kahawaGreen, fg=kahawaWhite}
+
+% ─── Fonts ───
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{title}{size=\LARGE, series=\bfseries}
 
 % ─── Packages ───
 \usepackage{graphicx}
@@ -41,10 +89,10 @@
     keywordstyle=\color{kahawaGreen}\bfseries,
     stringstyle=\color{kahawaBrown},
     commentstyle=\color{gray}\itshape,
-    backgroundcolor=\color{kahawaLight},
+    backgroundcolor=\color{kahawaWhite},
     frame=single,
     framerule=0.5pt,
-    rulecolor=\color{kahawaBrown},
+    rulecolor=\color{kahawaBrownLight},
     breaklines=true,
     showstringspaces=false,
     tabsize=2
@@ -66,9 +114,11 @@
 % ─── Remove navigation symbols ───
 \setbeamertemplate{navigation symbols}{}
 
-% ─── Slide numbers ───
+% ─── Slide numbers: brown bar footer ───
 \setbeamertemplate{footline}{
-    \hfill\insertframenumber/\inserttotalframenumber\hspace*{0.5cm}\vspace*{0.3cm}
+    \begin{beamercolorbox}[wd=\paperwidth, ht=0.35cm, dp=0.15cm]{footline}
+        \hfill{\scriptsize\color{kahawaWhite}\insertframenumber/\inserttotalframenumber}\hspace*{0.4cm}
+    \end{beamercolorbox}
 }
 
 \begin{document}
@@ -243,39 +293,38 @@ the founders (Rupal \& Cetric) aren't developers — so the system has two simpl
 \end{tikzpicture}
 
 \vspace{0.5em}
+\vspace{0.5em}
 \textbf{\faCode\ Bonus: Database Schema}
 
-\begin{lstlisting}[style=sql]
-CREATE TABLE farmers (
-  id         UUID PRIMARY KEY,
-  name       VARCHAR(100),
-  region     VARCHAR(100), -- e.g. Mt. Elgon
-  farm_size  DECIMAL,      -- hectares
-  latitude   DECIMAL(9,6),
-  longitude  DECIMAL(9,6),
-  cooperative VARCHAR(100)
-);
-
-CREATE TABLE shipments (
-  id         UUID PRIMARY KEY,
-  batch_id   VARCHAR(50) UNIQUE,
-  farmer_id  UUID REFERENCES farmers(id),
-  grade      VARCHAR(10), -- AA, AB, PB
-  weight_kg  DECIMAL,
-  status     VARCHAR(20),
-  created_at TIMESTAMP DEFAULT NOW()
-);
-
-CREATE TABLE shipment_stages (
-  id          UUID PRIMARY KEY,
-  shipment_id UUID REFERENCES shipments(id),
-  stage       VARCHAR(50), -- farm, processing,
-                           -- export, import
-  location    VARCHAR(100),
-  timestamp   TIMESTAMP,
-  notes       TEXT
-);
-\end{lstlisting}
+{\ttfamily\tiny\color{textDark}
+\begin{tabular}{@{}l@{}}
+\textcolor{kahawaGreen}{\textbf{CREATE TABLE}} farmers ( \\
+\quad id \quad\quad UUID PRIMARY KEY, \\
+\quad name \quad VARCHAR(100), \\
+\quad region \quad VARCHAR(100), \\
+\quad farm\_size DECIMAL, \\
+\quad latitude \quad DECIMAL(9,6), \\
+\quad longitude DECIMAL(9,6), \\
+\quad cooperative VARCHAR(100) \\
+); \\[0.3em]
+\textcolor{kahawaGreen}{\textbf{CREATE TABLE}} shipments ( \\
+\quad id \quad\quad UUID PRIMARY KEY, \\
+\quad batch\_id VARCHAR(50) UNIQUE, \\
+\quad farmer\_id UUID REFERENCES farmers(id), \\
+\quad grade \quad VARCHAR(10), \\
+\quad weight\_kg DECIMAL, \\
+\quad status \quad VARCHAR(20), \\
+\quad created\_at TIMESTAMP DEFAULT NOW() \\
+); \\[0.3em]
+\textcolor{kahawaGreen}{\textbf{CREATE TABLE}} shipment\_stages ( \\
+\quad id \quad\quad\quad UUID PRIMARY KEY, \\
+\quad shipment\_id UUID REFERENCES shipments(id), \\
+\quad stage \quad\quad VARCHAR(50), \\
+\quad location \quad VARCHAR(100), \\
+\quad notes \quad\quad TEXT \\
+); \\
+\end{tabular}
+}
 
 \end{column}
 
@@ -349,7 +398,7 @@ CREATE TABLE shipment_stages (
 
 \begin{column}{0.48\textwidth}
 
-\textbf{\faShieldAlt\ Operations \& Security}
+\textbf{\faLock\ Operations \& Security}
 \vspace{0.3em}
 
 \begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]

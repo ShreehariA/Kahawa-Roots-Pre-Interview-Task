@@ -1,91 +1,87 @@
 <mxfile host="app.diagrams.net" agent="draw.io">
   <diagram id="kahawa-roots-arch" name="Kahawa Roots Architecture">
-    <mxGraphModel dx="2987" dy="821" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+    <mxGraphModel dx="1746" dy="1231" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="title1" parent="1" style="text;html=1;fontSize=24;fontStyle=5;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#1a1a1a;" value="KAHAWA ROOTS" vertex="1">
           <mxGeometry height="40" width="400" x="600" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="title2" parent="1" style="text;html=1;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#666666;" value="Traceability Platform Architecture" vertex="1">
+        <mxCell id="title2" parent="1" style="text;html=1;fontSize=14;fontStyle=0;align=center;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#666666;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Traceability Platform Architecture&lt;/font&gt;" vertex="1">
           <mxGeometry height="25" width="400" x="600" y="45" as="geometry" />
         </mxCell>
-        <mxCell id="gcp_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#4285F4;strokeWidth=3;dashed=0;arcSize=3;" value="" vertex="1">
-          <mxGeometry height="540" width="1560" y="80" as="geometry" />
+        <mxCell id="gcp_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=light-dark(#4285F4,#FFFFFF);strokeWidth=3;dashed=0;arcSize=3;" value="" vertex="1">
+          <mxGeometry height="540" width="1539" x="9" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="gcp_label" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#4285F4;" value="☁️ Google Cloud Platform (GCP) — europe-west2 (London)" vertex="1">
+        <mxCell id="gcp_label" parent="1" style="text;html=1;fontSize=16;fontStyle=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#4285F4;" value="&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Google Cloud Platform (GCP) — europe-west2 (London)&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="500" x="550" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="iam_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#4285F4,#FF0000);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;IAM&lt;/b&gt;&lt;br&gt;Manage Roles &amp;&lt;br&gt;Permissions" vertex="1">
+        <mxCell id="iam_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#4285F4,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;IAM&lt;/b&gt;&lt;br&gt;Manage Roles &amp;&lt;br&gt;Permissions" vertex="1">
           <mxGeometry height="65" width="150" x="510" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="terraform_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#7B61FF;strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Terraform&lt;/b&gt;&lt;br&gt;IaC (Infra as Code)" vertex="1">
+        <mxCell id="terraform_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#7B61FF,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Terraform&lt;/b&gt;&lt;br&gt;IaC (Infra as Code)" vertex="1">
           <mxGeometry height="65" width="160" x="700" y="120" as="geometry" />
         </mxCell>
         <mxCell id="cicd_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#333333;strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;CI/CD&lt;/b&gt;&lt;br&gt;GitHub Actions" vertex="1">
           <mxGeometry height="65" width="150" x="900" y="120" as="geometry" />
         </mxCell>
-        <mxCell id="admin_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FF8000);strokeWidth=2;arcSize=5;" value="" vertex="1">
+        <mxCell id="admin_boundary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;arcSize=5;" value="" vertex="1">
           <mxGeometry height="450" width="310" x="20" y="140" as="geometry" />
         </mxCell>
         <mxCell id="admin_label" parent="1" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Helvetica;fontColor=#E65100;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Admin Side&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="200" x="30" y="175" as="geometry" />
         </mxCell>
-        <mxCell id="normal_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#66FFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Normal Upload&lt;/b&gt;&lt;br&gt;(Single Shipment)" vertex="1">
-          <mxGeometry height="55" width="130" x="35" y="270" as="geometry" />
+        <mxCell id="normal_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Normal Upload&lt;/b&gt;&lt;br&gt;(Single Shipment)" vertex="1">
+          <mxGeometry height="55" width="130" x="35" y="337.5" as="geometry" />
         </mxCell>
-        <mxCell id="gform_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#2E7D32,#66FFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Like a Form&lt;/b&gt;&lt;br&gt;Based" vertex="1">
-          <mxGeometry height="55" width="120" x="190" y="270" as="geometry" />
+        <mxCell id="gform_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#2E7D32,#FFFFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Web Form&lt;/b&gt;&lt;br&gt;Based" vertex="1">
+          <mxGeometry height="55" width="120" x="190" y="337.5" as="geometry" />
         </mxCell>
         <mxCell id="arrow_normal_gform" edge="1" parent="1" source="normal_upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#888888;strokeWidth=1.5;" target="gform_box">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="excel_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#66FFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Excel Upload&lt;/b&gt;" vertex="1">
-          <mxGeometry height="45" width="130" x="35" y="391.25" as="geometry" />
+        <mxCell id="excel_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Excel Upload&lt;/b&gt;" vertex="1">
+          <mxGeometry height="45" width="130" x="35" y="405" as="geometry" />
         </mxCell>
-        <mxCell id="bulk_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#66FFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Bulk CSV/Excel&lt;/b&gt;&lt;br&gt;Upload" vertex="1">
-          <mxGeometry height="47.5" width="120" x="190" y="390" as="geometry" />
+        <mxCell id="bulk_upload" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;fontSize=11;" value="&lt;b&gt;Bulk CSV/Excel&lt;/b&gt;&lt;br&gt;Upload" vertex="1">
+          <mxGeometry height="47.5" width="120" x="190" y="403.75" as="geometry" />
         </mxCell>
         <mxCell id="arrow_excel_bulk" edge="1" parent="1" source="excel_upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#888888;strokeWidth=1.5;" target="bulk_upload">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="dashboard_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#E65100;strokeWidth=2;fontSize=11;dashed=1;" value="&lt;b&gt;Data Dashboard&lt;/b&gt;&lt;br&gt;(View &amp; Manage)" vertex="1">
-          <mxGeometry height="55" width="130" x="35" y="500" as="geometry" />
+        <mxCell id="dashboard_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;fontSize=11;dashed=1;" value="&lt;b&gt;Data Dashboard&lt;/b&gt;&lt;br&gt;(View &amp; Manage)" vertex="1">
+          <mxGeometry height="55" width="130" x="35" y="510" as="geometry" />
         </mxCell>
-        <mxCell id="tableau_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#7B1FA2;strokeWidth=2;fontSize=11;dashed=1;" value="&lt;b&gt;Tableau Based&lt;/b&gt;&lt;br&gt;(or Looker Studio)" vertex="1">
-          <mxGeometry height="55" width="120" x="190" y="500" as="geometry" />
+        <mxCell id="tableau_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#7B1FA2,#FFFFFF);strokeWidth=2;fontSize=11;dashed=1;" value="&lt;b&gt;Tableau Based&lt;/b&gt;&lt;br&gt;(or Looker Studio)" vertex="1">
+          <mxGeometry height="55" width="120" x="190" y="510" as="geometry" />
         </mxCell>
         <mxCell id="arrow_dash_tableau" edge="1" parent="1" source="dashboard_box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#888888;strokeWidth=1.5;dashed=1;" target="tableau_box">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="maybe_label1" parent="1" style="text;html=1;fontSize=10;fontStyle=3;align=center;verticalAlign=middle;fontColor=#999999;" value="&lt;div style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-weight: normal; font-style: normal;&quot;&gt;Maybe in future?&lt;/span&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="20" width="205" x="72.5" y="470" as="geometry" />
-        </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-9" edge="1" parent="1" source="rest_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeColor=light-dark(#000000,#63A8F6);strokeWidth=2;" target="X5RvPf9-mBcD6KgxMLiU-6">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-9" edge="1" parent="1" source="rest_api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeColor=light-dark(#000000,#FFFFFF);strokeWidth=2;" target="X5RvPf9-mBcD6KgxMLiU-6">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rest_api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#1565C0,#0066CC);strokeWidth=2;fontSize=12;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Run (backend)&lt;/b&gt;&lt;br&gt;&lt;hr&gt;&lt;div&gt;&lt;font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;b style=&quot;&quot;&gt;REST API&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;hr&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Receives data and sends it to checker if everything is fine then data is uploaded to cloud storage&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 11px;&quot;&gt;Python&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Data Checker&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;hr&gt;Schema validation&lt;br&gt;Type checking&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="rest_api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;fontSize=12;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Run (backend)&lt;/b&gt;&lt;br&gt;&lt;hr&gt;&lt;div&gt;&lt;font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;b style=&quot;&quot;&gt;REST API&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font&gt;&lt;hr&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Receives data and sends it to checker if everything is fine then data is uploaded to cloud storage&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 11px;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 11px;&quot;&gt;Python&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;b style=&quot;font-size: 11px;&quot;&gt;Data Checker&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 12px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;hr&gt;Schema validation&lt;br&gt;Type checking&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="230" width="155" x="400" y="260" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_gform_api" edge="1" parent="1" source="X5RvPf9-mBcD6KgxMLiU-19" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#66FFFF);strokeWidth=2;fontSize=10;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="rest_api" value="data">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="arrow_bulk_api" edge="1" parent="1" source="X5RvPf9-mBcD6KgxMLiU-20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#66FFFF);strokeWidth=2;fontSize=10;fontStyle=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="rest_api" value="data">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="arrow_gform_api" edge="1" parent="1" source="gform_box" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;fontSize=10;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;labelBackgroundColor=none;" target="rest_api" value="data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="350" as="sourcePoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="new_data_label" parent="1" style="text;html=1;fontSize=9;fontStyle=2;align=center;verticalAlign=middle;fontColor=#888888;" value="when we get&lt;br&gt;new data" vertex="1">
           <mxGeometry height="30" width="80" x="670" y="420" as="geometry" />
         </mxCell>
-        <mxCell id="event_trigger" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=default;strokeColor=#C62828;strokeWidth=2;fontSize=11;size=15;" value="&lt;b&gt;Event&lt;br&gt;Trigger&lt;/b&gt;&lt;div&gt;&lt;hr&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Triggers only when we get data into bucket&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="event_trigger" parent="1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=default;strokeColor=light-dark(#C62828,#FFFFFF);strokeWidth=2;fontSize=11;size=15;" value="&lt;b&gt;Event&lt;br&gt;Trigger&lt;/b&gt;&lt;div&gt;&lt;hr&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Triggers only when we get data into bucket&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="80" width="100" x="820" y="302.5" as="geometry" />
         </mxCell>
-        <mxCell id="cloud_functions" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#954F00,#FFFF00);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Functions&lt;/b&gt;&lt;br&gt;&lt;hr&gt;Parse new data&lt;br&gt;Clean &amp;amp; normalise&lt;br&gt;Gate 2: Business validation&lt;br&gt;Push to DB" vertex="1">
+        <mxCell id="cloud_functions" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#954F00,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Functions&lt;/b&gt;&lt;br&gt;&lt;hr&gt;Parse new data&lt;br&gt;Clean &amp;amp; normalise&lt;br&gt;Gate 2: Business validation&lt;br&gt;Push to DB" vertex="1">
           <mxGeometry height="110" width="180" x="960" y="280" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_trigger_functions" edge="1" parent="1" source="event_trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#2E7D32,#FF9191);strokeWidth=2;" target="cloud_functions" value="">
+        <mxCell id="arrow_trigger_functions" edge="1" parent="1" source="event_trigger" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#2E7D32,#FFFFFF);strokeWidth=2;" target="cloud_functions" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-13" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;strokeColor=light-dark(#000000,#656565);">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-13" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;dashed=1;strokeColor=light-dark(#000000,#FFFFFF);">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1275" y="530" />
@@ -94,68 +90,68 @@
             <mxPoint x="310" y="530" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-17" connectable="0" parent="X5RvPf9-mBcD6KgxMLiU-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-style: italic; font-weight: 700;&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(101, 101, 101)); font-size: 9px;&quot;&gt;Maybe?&lt;/font&gt;&lt;/span&gt;" vertex="1">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-17" connectable="0" parent="X5RvPf9-mBcD6KgxMLiU-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;span style=&quot;font-style: italic; font-weight: 700;&quot;&gt;&lt;font style=&quot;font-size: 9px; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Maybe?&lt;/font&gt;&lt;/span&gt;" vertex="1">
           <mxGeometry relative="1" x="-0.2871" y="-1" as="geometry">
             <mxPoint x="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="cloud_sql" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=default;strokeColor=light-dark(#1565C0,#00CC66);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud SQL&lt;/b&gt;&lt;br&gt;&lt;hr&gt;PostgreSQL&lt;br&gt;Store clean data&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9px; color: rgb(85, 85, 85);&quot;&gt;shipments&lt;br&gt;shipment_stages&lt;br&gt;farmers&lt;/font&gt;" vertex="1">
+        <mxCell id="cloud_sql" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=default;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud SQL&lt;/b&gt;&lt;br&gt;&lt;hr&gt;PostgreSQL&lt;br&gt;Store clean data&lt;br&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9px; color: rgb(85, 85, 85);&quot;&gt;shipments&lt;br&gt;shipment_stages&lt;br&gt;farmers&lt;/font&gt;" vertex="1">
           <mxGeometry height="140" width="170" x="1190" y="270" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_functions_sql" edge="1" parent="1" source="cloud_functions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#FFFF00);strokeWidth=2;" target="cloud_sql" value="">
+        <mxCell id="arrow_functions_sql" edge="1" parent="1" source="cloud_functions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;" target="cloud_sql" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cloud_run" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#1B5E20,#FF8000);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Run&lt;/b&gt;&lt;br&gt;&lt;hr&gt;Generates and Host QR codes&lt;br&gt;&lt;font style=&quot;font-size: 9px; color: rgb(85, 85, 85);&quot;&gt;Next.js (Dockerized)&lt;/font&gt;" vertex="1">
+        <mxCell id="cloud_run" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#1B5E20,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Cloud Run&lt;/b&gt;&lt;br&gt;&lt;hr&gt;Generates and Host QR codes&lt;br&gt;&lt;font style=&quot;font-size: 9px; color: rgb(85, 85, 85);&quot;&gt;Next.js (Dockerized)&lt;/font&gt;" vertex="1">
           <mxGeometry height="100" width="170" x="1190" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_sql_cloudrun" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1B5E20,#00CC66);strokeWidth=2;fontSize=10;fontStyle=2;" target="cloud_run" value="reads">
+        <mxCell id="arrow_sql_cloudrun" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1B5E20,#FFFFFF);strokeWidth=2;fontSize=10;fontStyle=2;" target="cloud_run" value="reads">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="bigquery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#9E9E9E;strokeWidth=2;fontSize=11;fontFamily=Helvetica;dashed=1;" value="&lt;b&gt;BigQuery&lt;/b&gt;&lt;br&gt;&lt;hr&gt;📊 Analytics&lt;br&gt;&lt;font style=&quot;font-size:10px;color:#999&quot;&gt;Maybe in future?&lt;/font&gt;" vertex="1">
+        <mxCell id="bigquery" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#9E9E9E,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;dashed=1;" value="&lt;b&gt;BigQuery&lt;/b&gt;&lt;br&gt;&lt;hr&gt;&amp;nbsp;Analytics&lt;br&gt;&lt;font style=&quot;font-size: 10px; color: rgb(153, 153, 153);&quot;&gt;Maybe in future?&lt;/font&gt;" vertex="1">
           <mxGeometry height="75" width="170" x="1330" y="480" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_sql_bq" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#9E9E9E;strokeWidth=1.5;dashed=1;fontSize=9;fontStyle=2;fontColor=#999999;" target="bigquery" value="Maybe?">
+        <mxCell id="arrow_sql_bq" edge="1" parent="1" source="cloud_sql" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#9E9E9E,#FFFFFF);strokeWidth=1.5;dashed=1;fontSize=9;fontStyle=2;fontColor=light-dark(#999999,#FFFFFF);" target="bigquery" value="Maybe?">
           <mxGeometry relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="consumer_phone" parent="1" style="shape=mxgraph.flowchart.display;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FF8000);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="📱&lt;br&gt;&lt;b&gt;Consumer&lt;br&gt;Scans QR&lt;/b&gt;" vertex="1">
+        <mxCell id="consumer_phone" parent="1" style="shape=mxgraph.flowchart.display;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;Consumer&lt;br&gt;Scans QR&lt;/b&gt;" vertex="1">
           <mxGeometry height="75" width="120" x="1420" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_run_consumer" edge="1" parent="1" source="cloud_run" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#E65100;strokeWidth=2;" target="consumer_phone" value="">
+        <mxCell id="arrow_run_consumer" edge="1" parent="1" source="cloud_run" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#E65100,#FFFFFF);strokeWidth=2;" target="consumer_phone" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="medallion_boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;strokeWidth=1;dashed=1;" value="" vertex="1">
+        <mxCell id="medallion_boundary" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=light-dark(#999999,#FFFFFF);strokeWidth=1;dashed=1;" value="" vertex="1">
           <mxGeometry height="80" width="1200" x="340" y="640" as="geometry" />
         </mxCell>
-        <mxCell id="medallion_title" parent="1" style="text;html=1;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;fontColor=#555555;" value="MEDALLION ARCHITECTURE" vertex="1">
+        <mxCell id="medallion_title" parent="1" style="text;html=1;fontSize=14;fontStyle=1;align=center;verticalAlign=middle;fontColor=#555555;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;MEDALLION ARCHITECTURE&lt;/font&gt;" vertex="1">
           <mxGeometry height="25" width="280" x="850" y="730" as="geometry" />
         </mxCell>
-        <mxCell id="bronze_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FBE9E7;strokeColor=#BF360C;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#BF360C;" value="🥉 BRONZE LAYER" vertex="1">
+        <mxCell id="bronze_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#BF360C,#FFFFFF);strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#BF360C;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;BRONZE LAYER&lt;/font&gt;" vertex="1">
           <mxGeometry height="35" width="180" x="350" y="662.5" as="geometry" />
         </mxCell>
-        <mxCell id="silver_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3F2FD;strokeColor=#1565C0;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#1565C0;" value="🥈 SILVER LAYER" vertex="1">
+        <mxCell id="silver_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#1565C0;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;SILVER LAYER&lt;/font&gt;" vertex="1">
           <mxGeometry height="35" width="280" x="830" y="662.5" as="geometry" />
         </mxCell>
         <mxCell id="silver_scope" parent="1" style="text;html=1;fontSize=9;fontStyle=2;align=center;verticalAlign=top;fontColor=#1565C0;" value="" vertex="1">
           <mxGeometry height="20" width="280" x="710" y="860" as="geometry" />
         </mxCell>
-        <mxCell id="gold_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#F9A825;strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#F57F17;" value="🥇 GOLD LAYER" vertex="1">
+        <mxCell id="gold_label" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#F9A825,#FFFFFF);strokeWidth=2;fontSize=12;fontStyle=1;fontColor=#F57F17;" value="&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;GOLD LAYER&lt;/font&gt;" vertex="1">
           <mxGeometry height="35" width="180" x="1350" y="660" as="geometry" />
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-2" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;strokeColor=light-dark(#000000,#E65100);" value="">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-2" edge="1" parent="1" source="admin_boundary" style="endArrow=none;html=1;rounded=0;strokeColor=light-dark(#000000,#FFFFFF);exitX=0.002;exitY=0.738;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
             <Array as="points">
-              <mxPoint x="170" y="460" />
+              <mxPoint x="180" y="470" />
             </Array>
-            <mxPoint x="18" y="461" as="sourcePoint" />
-            <mxPoint x="320" y="460" as="targetPoint" />
+            <mxPoint x="28" y="471" as="sourcePoint" />
+            <mxPoint x="330" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-10" edge="1" parent="1" source="X5RvPf9-mBcD6KgxMLiU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeColor=light-dark(#000000,#CCFF99);strokeWidth=2;" target="event_trigger">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-10" edge="1" parent="1" source="X5RvPf9-mBcD6KgxMLiU-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;curved=1;strokeColor=light-dark(#000000,#FFFFFF);strokeWidth=2;" target="event_trigger">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-6" parent="1" style="swimlane;startSize=0;strokeWidth=3;strokeColor=light-dark(#000000,#66FF66);fillColor=light-dark(#FFFFFF,#CCFF99);swimlaneFillColor=default;" value="" vertex="1">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-6" parent="1" style="swimlane;startSize=0;strokeWidth=3;strokeColor=light-dark(#000000,#FFFFFF);fillColor=light-dark(#FFFFFF,#CCFF99);swimlaneFillColor=default;" value="" vertex="1">
           <mxGeometry height="170" width="140" x="640" y="275" as="geometry" />
         </mxCell>
         <mxCell id="X5RvPf9-mBcD6KgxMLiU-7" parent="X5RvPf9-mBcD6KgxMLiU-6" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;Cloud Storage&lt;/b&gt;&lt;br style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;&lt;/font&gt;&lt;hr style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(27, 29, 30); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;&lt;font style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Data as CSV/JSON&lt;/span&gt;&lt;br style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;&lt;span style=&quot;font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;(Buckets)&lt;/span&gt;&lt;br style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;&lt;br style=&quot;forced-color-adjust: none; font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; box-shadow: none !important;&quot;&gt;&lt;font size=&quot;1&quot;&gt;Used to store history and also acts as a backup data store&lt;/font&gt;&lt;/font&gt;" vertex="1">
@@ -164,35 +160,59 @@
         <mxCell id="X5RvPf9-mBcD6KgxMLiU-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;&quot;&gt;&lt;b&gt;Cloud Run&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;hr&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="45" width="280" x="35" y="140" as="geometry" />
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
-          <mxGeometry height="125" width="295" x="27.5" y="205" as="geometry" />
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-19" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=light-dark(#000000,#FFFFFF);" value="" vertex="1">
+          <mxGeometry height="245" width="295" x="25" y="212.5" as="geometry" />
         </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" value="" vertex="1">
-          <mxGeometry height="107.5" width="295" x="27.5" y="337.5" as="geometry" />
-        </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;UI/UX&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;hr&gt;react, Next JS, CSS, HTML , JS&lt;/div&gt;" vertex="1">
+        <mxCell id="X5RvPf9-mBcD6KgxMLiU-22" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;UI/UX&lt;/b&gt;&lt;div&gt;&lt;hr&gt;react, Next JS, CSS, HTML , JS&lt;/div&gt;" vertex="1">
           <mxGeometry height="45" width="285" x="35" y="215" as="geometry" />
-        </mxCell>
-        <mxCell id="X5RvPf9-mBcD6KgxMLiU-24" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;b&gt;UI/UX&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;hr&gt;React, Next JS, CSS, HTML , JS&lt;/div&gt;" vertex="1">
-          <mxGeometry height="45" width="285" x="37.5" y="337.5" as="geometry" />
         </mxCell>
         <mxCell id="X5RvPf9-mBcD6KgxMLiU-26" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=default;fillColor=none;align=center;verticalAlign=middle;rounded=0;dashed=1;" value="Shree Hari Anbazhagan&amp;nbsp;&lt;div&gt;shreeharianbazhagan@gmail.com&lt;/div&gt;&lt;div&gt;07721046613&lt;/div&gt;" vertex="1">
           <mxGeometry height="85" width="220" x="65" y="635" as="geometry" />
         </mxCell>
-        <mxCell id="secret_manager_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#F9A825,#FF3333);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;&amp;nbsp;Secret Manager&lt;/b&gt;&lt;br&gt;DB Passwords, API Keys" vertex="1">
+        <mxCell id="secret_manager_box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#F9A825,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;" value="&lt;b&gt;&amp;nbsp;Secret Manager&lt;/b&gt;&lt;br&gt;DB Passwords, API Keys" vertex="1">
           <mxGeometry height="65" width="170" x="620" y="540" as="geometry" />
         </mxCell>
-        <mxCell id="error_bucket" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#C62828;strokeWidth=2;fontSize=11;fontFamily=Helvetica;dashed=0;" value="&lt;b&gt;❌ Error Bucket&lt;/b&gt;&lt;br&gt;&lt;hr&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Stores Failed records, reason, time, etc&lt;/font&gt;" vertex="1">
+        <mxCell id="error_bucket" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#C62828,#FFFFFF);strokeWidth=2;fontSize=11;fontFamily=Helvetica;dashed=0;" value="&lt;b&gt;Error Bucket&lt;/b&gt;&lt;br&gt;&lt;hr&gt;&lt;font style=&quot;font-size:9px&quot;&gt;Stores Failed records, reason, time, etc&lt;/font&gt;" vertex="1">
           <mxGeometry height="75" width="180" x="960" y="437.5" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_functions_error" edge="1" parent="1" source="cloud_functions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#C62828;strokeWidth=2;dashed=1;fontSize=9;fontStyle=1;fontColor=#C62828;" target="error_bucket" value="❌ fail">
+        <mxCell id="arrow_functions_error" edge="1" parent="1" source="cloud_functions" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#C62828,#FFFFFF);strokeWidth=2;dashed=1;fontSize=9;fontStyle=1;fontColor=light-dark(#C62828,#FFFFFF);" target="error_bucket" value=" fail">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="cloud_monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=#C62828;strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;dashed=1;" value="&lt;b&gt;🔔 Cloud Monitoring&lt;/b&gt;&lt;br&gt;Alert → Admin Email" vertex="1">
+        <mxCell id="cloud_monitoring" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;strokeColor=light-dark(#C62828,#FFFFFF);strokeWidth=1.5;fontSize=10;fontFamily=Helvetica;dashed=1;" value="&lt;b&gt;Cloud Monitoring&lt;/b&gt;&lt;br&gt;Alert → Admin Email" vertex="1">
           <mxGeometry height="50" width="160" x="760" y="460" as="geometry" />
         </mxCell>
-        <mxCell id="arrow_error_monitoring" edge="1" parent="1" source="error_bucket" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#C62828;strokeWidth=1.5;dashed=1;" target="cloud_monitoring" value="">
+        <mxCell id="arrow_error_monitoring" edge="1" parent="1" source="error_bucket" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#C62828,#FFFFFF);strokeWidth=1.5;dashed=1;" target="cloud_monitoring" value="">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Page 1:" vertex="1">
+          <mxGeometry height="30" width="60" x="35" y="307.5" as="geometry" />
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Page 0: Login page (stores user info hashed in secure place and cross verifies and let&#39;s user in)" vertex="1">
+          <mxGeometry height="30" width="285" x="25" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-3" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.002;exitY=0.321;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.992;entryY=0.326;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="27.94999999999969" y="310.005" as="sourcePoint" />
+            <mxPoint x="319.99999999999943" y="311.23" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-4" edge="1" parent="1" source="bulk_upload" style="edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=light-dark(#1565C0,#FFFFFF);strokeWidth=2;fontSize=10;fontStyle=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;" target="rest_api" value="data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="330" as="sourcePoint" />
+            <mxPoint x="430" y="372" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Page 2:&amp;nbsp;&lt;span style=&quot;font-size: 10px; text-align: justify; text-wrap-mode: nowrap;&quot;&gt;Maybe in future?&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="145" x="30" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-9" edge="1" parent="1" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.002;exitY=0.321;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.992;entryY=0.326;entryDx=0;entryDy=0;entryPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="26.47" y="268.78" as="sourcePoint" />
+            <mxPoint x="318.51999999999975" y="270.005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Hrlx5ar5-HQIOsnS16Cv-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;div style=&quot;text-align: start;&quot;&gt;&lt;font face=&quot;-apple-system, system-ui, sans-serif&quot; style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;span style=&quot;font-size: 13px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;b style=&quot;&quot;&gt;Not in architecture&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;ul style=&quot;padding-inline-start: 24px; margin-bottom: 0px; font-family: -apple-system, &amp;quot;system-ui&amp;quot;, sans-serif; font-size: 13px; text-align: start; background-color: rgb(24, 24, 24);&quot;&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;margin: 0px;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;strong style=&quot;&quot;&gt;No CDN / Load Balancer&lt;/strong&gt;&amp;nbsp;— QR pages could get traffic spikes from marketing campaigns or press coverage. Cloud Run handles auto-scaling, but adding&amp;nbsp;&lt;strong style=&quot;&quot;&gt;Cloud CDN&lt;/strong&gt;&amp;nbsp;for static assets (images, CSS, JS) would reduce latency and cost.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;margin: 0px;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;strong&gt;No caching layer&lt;/strong&gt;&amp;nbsp;— Every QR scan currently hits Cloud SQL directly. Since QR traceability data rarely changes once written, it&#39;s very cache-friendly.&amp;nbsp;&lt;strong&gt;Redis (Memorystore)&lt;/strong&gt;&amp;nbsp;in front of the DB would cut read latency and DB load — mention as a future optimisation.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;margin: 0px;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;strong&gt;No backup / DR strategy shown&lt;/strong&gt;&amp;nbsp;— If Cloud SQL goes down, what&#39;s the recovery plan? The answer:&amp;nbsp;&lt;strong&gt;Cloud SQL has automated daily backups and point-in-time recovery built in&lt;/strong&gt;. Mention it verbally — you don&#39;t need it on the diagram, but you need to know it exists.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;margin: 0px;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;strong&gt;Auth details are thin&lt;/strong&gt;&amp;nbsp;— &quot;Hashed in secure place&quot; is vague. Be ready to say: passwords hashed with&amp;nbsp;&lt;strong&gt;bcrypt&lt;/strong&gt;, sessions managed with&amp;nbsp;&lt;strong&gt;JWT tokens&lt;/strong&gt;, or alternatively offload auth entirely to&amp;nbsp;&lt;strong&gt;Firebase Auth / Google Identity Platform&lt;/strong&gt;. Pick one and own it.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;li style=&quot;&quot;&gt;&lt;p style=&quot;margin: 0px;&quot;&gt;&lt;span&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(0, 0, 0));&quot;&gt;&lt;strong style=&quot;&quot;&gt;No rate limiting&lt;/strong&gt;&amp;nbsp;— The public-facing QR API could be abused (scraping, DDoS). Mention&amp;nbsp;&lt;strong style=&quot;&quot;&gt;Cloud Armor&lt;/strong&gt;&amp;nbsp;for DDoS protection or&amp;nbsp;&lt;strong style=&quot;&quot;&gt;API Gateway&lt;/strong&gt;&amp;nbsp;with rate limiting policies — a one-sentence answer shows you&#39;ve thought about security beyond just authentication.&lt;/font&gt;&lt;/span&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;" vertex="1">
+          <mxGeometry height="185" width="1490" x="33.5" y="790" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

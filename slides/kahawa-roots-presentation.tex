@@ -319,6 +319,68 @@ CREATE TABLE shipment_stages (
 
 \end{frame}
 
-% Slide 5 merged into Slide 1 — free slot available
+% ══════════════════════════════════════════════════════════════
+% SLIDE 5: WHAT DOES ALL THIS MEAN? (Plain English)
+% ══════════════════════════════════════════════════════════════
+\begin{frame}{What Does All This Actually Mean?}
+
+\begin{columns}[T]
+
+\begin{column}{0.48\textwidth}
+
+\textbf{\faCubes\ Architecture Concepts}
+\vspace{0.3em}
+
+\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
+
+    \item[Microservices] \scriptsize instead of one big application, we split into 3 small independent apps — admin panel, backend API, and QR page. if one breaks or needs updating, the others keep running. like separate kitchens in a restaurant.
+
+    \item[Cloud Functions] \scriptsize a small piece of code that runs \textit{only} when new data arrives in storage. no server to manage, no cost when idle. think of it like a light that turns on only when someone walks in.
+
+    \item[REST API] \scriptsize the ``messenger'' between the admin form and the database. when you submit data, the API checks it, cleans it, and passes it along. like a receptionist who filters visitors before they enter.
+
+    \item[PostgreSQL] \scriptsize a database — like a very smart spreadsheet. it stores all shipment data in organised tables with relationships. e.g. each shipment links to a farmer, each farmer has stages.
+
+    \item[Medallion Architecture] \scriptsize data goes through 3 layers: \textcolor{bronzeColor}{\textbf{Bronze}} (raw, untouched backup) → \textcolor{silverColor}{\textbf{Silver}} (cleaned and validated) → \textcolor{goldColor}{\textbf{Gold}} (ready for customers to see). ensures no bad data ever reaches the QR page.
+
+\end{description}
+
+\end{column}
+
+\begin{column}{0.48\textwidth}
+
+\textbf{\faShieldAlt\ Operations \& Security}
+\vspace{0.3em}
+
+\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
+
+    \item[IAM (Identity \& Access)] \scriptsize controls \textit{who} can do \textit{what}. e.g. admins can add shipments, but the public can only view QR pages. like a key card system in an office — different doors for different people.
+
+    \item[Terraform (IaC)] \scriptsize instead of clicking buttons to set up servers manually, we write a config file that does it automatically. if we need to rebuild everything, one command recreates the whole system. like a recipe vs cooking from memory.
+
+    \item[CI/CD (GitHub Actions)] \scriptsize every time we push code, it's automatically tested and deployed. no manual uploads, no ``it works on my laptop'' problems. like an assembly line for software.
+
+    \item[Secret Manager] \scriptsize stores passwords and API keys securely. nobody can accidentally see or leak database credentials. like a safe inside the server room.
+
+\end{description}
+
+\vspace{0.5em}
+
+\textbf{\faChartLine\ Future Plans}
+\vspace{0.3em}
+
+\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
+
+    \item[BigQuery] \scriptsize when we have enough data — analytics. ``which region produces the fastest shipments?'' or ``average transit time trends''. not needed now, but the architecture is ready for it.
+
+    \item[Data Dashboard] \scriptsize a visual dashboard (Tableau/Looker Studio) for founders to see charts and trends without touching the database. planned once there's enough shipment history.
+
+\end{description}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
 
 \end{document}

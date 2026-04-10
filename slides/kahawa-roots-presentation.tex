@@ -157,7 +157,7 @@
             \item[\faGlobe] \scriptsize{\href{https://deltaed-frontend-93684845515.europe-west2.run.app}{\textcolor{gcpBlue}{DeltaEd — Live on GCP Cloud Run}}}
             \item[\faCloud] GCP Cloud Run, \texttt{europe-west2} (London)
             \item[\faDocker] Dockerized, full stack
-            \item[\faCode] React + Next.js + PostgreSQL
+            \item[\faCode] React + Python + BigQuery
         \end{itemize}
 
         \vspace{0.3em}
@@ -172,55 +172,60 @@
 % ══════════════════════════════════════════════════════════════
 % SLIDE 2: HOW I'D BUILD THIS + NON-TECHNICAL ACCESS
 % ══════════════════════════════════════════════════════════════
-\begin{frame}{Part 1 \& 3: How I'd Build This}
-
+\begin{frame}{How I'd Build This}
+\small
 \begin{columns}[T]
 
 \begin{column}{0.55\textwidth}
 
 \textbf{\faDatabase\ How Data is Stored \& Recorded}
-\begin{itemize}
-    \item every shipment gets a unique ID when its first recorded
-    \item raw data (form/CSV) goes straight into \textbf{GCP Cloud Storage} as a backup — never touched, never deleted
-    \item a \textbf{Cloud Function} auto-triggers, cleans and validates the data
-    \item clean data lands in \textbf{Cloud SQL (PostgreSQL)} — 3 tables: \texttt{farmers}, \texttt{shipments}, \texttt{shipment\_stages}
-    \item each stage (farm → processing → export → UK) is a row in \texttt{shipment\_stages} with timestamps and GPS
+\vspace{-0.6em}
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item every shipment gets a unique ID when first recorded
+    \item raw data (form/CSV) → \textbf{Cloud Storage} as immutable backup
+    \item \textbf{Cloud Function} auto-triggers, cleans \& validates
+    \item clean data → \textbf{Cloud SQL (PostgreSQL)} — 3 tables: \texttt{farmers}, \texttt{shipments}, \texttt{shipment\_stages}
+    \item each stage (farm → processing → export → UK) is a row with timestamps and GPS
 \end{itemize}
 
+\vspace{-0.2em}
 \textbf{\faQrcode\ QR Code → Webpage}
-\begin{itemize}
-    \item QR is generated per shipment, encodes a URL like \texttt{/trace/SH-2026-001}
-    \item scanning opens a public page with a \textbf{map} (Kenya → UK) + journey timeline + farmer details
+\vspace{-0.6em}
+\begin{itemize}\setlength{\itemsep}{1pt}
+    \item QR generated per shipment, encodes URL like \texttt{/trace/SH-2026-001}
+    \item scan opens public page: \textbf{map} (Kenya → UK) + timeline + farmer info
 \end{itemize}
 
 \end{column}
 
 \begin{column}{0.42\textwidth}
 
-\textbf{\faUserFriends\ Non-Technical Data Entry (Part 3)}
+\textbf{\faUserFriends\ Non-Technical Data Entry}
 
 \vspace{0.3em}
-the founders (Rupal \& Cetric) aren't developers — so the system has two simple ways to add data:
-
-\vspace{0.5em}
 \begin{block}{\faWpforms\ Option 1: Web Form}
-    \begin{itemize}
-        \item fill in a simple form on the admin dashboard
+    \vspace{-0.3em}
+    \begin{itemize}\setlength{\itemsep}{0pt}
+        \item simple form on admin dashboard
         \item one shipment at a time
         \item no coding, no terminal, no SQL
     \end{itemize}
+    \vspace{-0.3em}
 \end{block}
 
+\vspace{-0.4em}
 \begin{block}{\faFileExcel\ Option 2: CSV/Excel Upload}
-    \begin{itemize}
+    \vspace{-0.3em}
+    \begin{itemize}\setlength{\itemsep}{0pt}
         \item drag and drop a spreadsheet
-        \item bulk import — great when cooperatives send batch data
-        \item system validates every row automatically
+        \item bulk import for cooperative batch data
+        \item auto-validates every row
     \end{itemize}
+    \vspace{-0.3em}
 \end{block}
 
-\vspace{0.3em}
-\footnotesize{\textit{both options feed into the same REST API → same validation → same database. zero coding needed from the user.}}
+\vspace{-0.4em}
+{\scriptsize\textit{both feed into same REST API → same validation → same DB.}}
 
 \end{column}
 
@@ -231,43 +236,35 @@ the founders (Rupal \& Cetric) aren't developers — so the system has two simpl
 % ══════════════════════════════════════════════════════════════
 % SLIDE 3: TECHNOLOGY CHOICES + BONUS
 % ══════════════════════════════════════════════════════════════
-\begin{frame}{Part 2: Technology Choices + Bonus}
+\begin{frame}{Technology Choices + Bonus}
 
 \begin{columns}[T]
 
-\begin{column}{0.48\textwidth}
+\begin{column}{0.55\textwidth}
 
 \textbf{\faTools\ Tech Stack \& Why}
 
-\vspace{0.3em}
-\footnotesize
-\begin{tabular}{p{2.2cm} p{4.5cm}}
+\vspace{0.2em}
+\scriptsize
+\begin{tabular}{p{1.6cm} p{4.8cm}}
     \toprule
     \textbf{Component} & \textbf{Choice \& Why} \\
     \midrule
-    \textbf{Cloud} & \textbf{GCP} (London region) \\
-    & — \textcolor{kahawaGreen}{\textbf{up to \$200K startup credits}} \\
-    & — UK data centre = GDPR friendly \\
-    & — Cloud Run scales to zero = pay nothing when idle \\
+    \textbf{Cloud} & \textbf{GCP} — London region, \textcolor{kahawaGreen}{\textbf{\$200K credits}}, GDPR, scales to zero \\
     \midrule
     \textbf{Backend} & \textbf{Python + REST API} on Cloud Run \\
-    & — fast to build, great for data validation \\
     \midrule
-    \textbf{Frontend} & \textbf{Next.js (React)} on Cloud Run \\
-    & — SSR for fast QR page loads, SEO friendly \\
+    \textbf{Frontend} & \textbf{Next.js (React)} — SSR, fast QR loads \\
     \midrule
-    \textbf{Database} & \textbf{Cloud SQL (PostgreSQL)} \\
-    & — relational, sub-10ms reads for QR scans \\
+    \textbf{Database} & \textbf{Cloud SQL (PostgreSQL)} — sub-10ms reads \\
     \midrule
-    \textbf{Storage} & \textbf{Cloud Storage} buckets \\
-    & — immutable raw data backup \\
+    \textbf{Storage} & \textbf{Cloud Storage} — immutable raw backup \\
     \midrule
-    \textbf{Processing} & \textbf{Cloud Functions} \\
-    & — event-driven, auto-triggered on new data \\
+    \textbf{Processing} & \textbf{Cloud Functions} — event-driven \\
     \midrule
-    \textbf{IaC} & \textbf{Terraform} — infra as code, repeatable \\
+    \textbf{IaC} & \textbf{Terraform} — repeatable infra \\
     \midrule
-    \textbf{CI/CD} & \textbf{GitHub Actions} — auto deploy on push \\
+    \textbf{CI/CD} & \textbf{GitHub Actions} — auto deploy \\
     \midrule
     \textbf{Maps} & \textbf{Google Maps API} — native to GCP \\
     \bottomrule
@@ -275,54 +272,40 @@ the founders (Rupal \& Cetric) aren't developers — so the system has two simpl
 
 \end{column}
 
-\begin{column}{0.48\textwidth}
+\begin{column}{0.42\textwidth}
 
-\textbf{\faLayerGroup\ Data Architecture: Medallion Pattern}
+\textbf{\faLayerGroup\ Medallion Architecture}
 
-\vspace{0.3em}
+\vspace{0.2em}
 \begin{tikzpicture}[
-    layer/.style={rounded corners=4pt, minimum width=5.5cm, minimum height=1.1cm, text=white, font=\small\bfseries, align=center},
+    layer/.style={rounded corners=4pt, minimum width=5.2cm, minimum height=0.85cm, text=white, font=\scriptsize\bfseries, align=center},
     arrow/.style={->, thick, gray}
 ]
-    \node[layer, fill=bronzeColor] (bronze) at (0,3) {Bronze Layer \\ \tiny Raw CSV/JSON in Cloud Storage};
-    \node[layer, fill=silverColor] (silver) at (0,1.6) {Silver Layer \\ \tiny Clean data in PostgreSQL};
-    \node[layer, fill=goldColor] (gold) at (0,0.2) {Gold Layer \\ \tiny QR Pages + BigQuery (future)};
+    \node[layer, fill=bronzeColor] (bronze) at (0,2.2) {Bronze Layer \\ \tiny Raw CSV/JSON in Cloud Storage};
+    \node[layer, fill=silverColor] (silver) at (0,1.1) {Silver Layer \\ \tiny Clean data in PostgreSQL};
+    \node[layer, fill=goldColor] (gold) at (0,0) {Gold Layer \\ \tiny QR Pages + BigQuery (future)};
 
     \draw[arrow] (bronze) -- (silver);
     \draw[arrow] (silver) -- (gold);
 \end{tikzpicture}
 
-\vspace{0.5em}
-\vspace{0.5em}
+\vspace{0.4em}
 \textbf{\faCode\ Bonus: Database Schema}
 
-{\ttfamily\tiny\color{textDark}
+{\ttfamily\fontsize{4.5pt}{5.5pt}\selectfont\color{textDark}
 \begin{tabular}{@{}l@{}}
 \textcolor{kahawaGreen}{\textbf{CREATE TABLE}} farmers ( \\
-\quad id \quad\quad UUID PRIMARY KEY, \\
-\quad name \quad VARCHAR(100), \\
-\quad region \quad VARCHAR(100), \\
-\quad farm\_size DECIMAL, \\
-\quad latitude \quad DECIMAL(9,6), \\
-\quad longitude DECIMAL(9,6), \\
-\quad cooperative VARCHAR(100) \\
-); \\[0.3em]
+\quad id UUID PK, name VARCHAR, region VARCHAR, \\
+\quad farm\_size DECIMAL, lat/lon DECIMAL(9,6), \\
+\quad cooperative VARCHAR ); \\[0.2em]
 \textcolor{kahawaGreen}{\textbf{CREATE TABLE}} shipments ( \\
-\quad id \quad\quad UUID PRIMARY KEY, \\
-\quad batch\_id VARCHAR(50) UNIQUE, \\
-\quad farmer\_id UUID REFERENCES farmers(id), \\
-\quad grade \quad VARCHAR(10), \\
-\quad weight\_kg DECIMAL, \\
-\quad status \quad VARCHAR(20), \\
-\quad created\_at TIMESTAMP DEFAULT NOW() \\
-); \\[0.3em]
+\quad id UUID PK, batch\_id VARCHAR UNIQUE, \\
+\quad farmer\_id UUID FK→farmers, grade VARCHAR, \\
+\quad weight\_kg DECIMAL, status VARCHAR, \\
+\quad created\_at TIMESTAMP DEFAULT NOW() ); \\[0.2em]
 \textcolor{kahawaGreen}{\textbf{CREATE TABLE}} shipment\_stages ( \\
-\quad id \quad\quad\quad UUID PRIMARY KEY, \\
-\quad shipment\_id UUID REFERENCES shipments(id), \\
-\quad stage \quad\quad VARCHAR(50), \\
-\quad location \quad VARCHAR(100), \\
-\quad notes \quad\quad TEXT \\
-); \\
+\quad id UUID PK, shipment\_id UUID FK→shipments, \\
+\quad stage VARCHAR, location VARCHAR, notes TEXT ); \\
 \end{tabular}
 }
 
@@ -337,34 +320,13 @@ the founders (Rupal \& Cetric) aren't developers — so the system has two simpl
 % ══════════════════════════════════════════════════════════════
 \begin{frame}{System Architecture}
 
+\vspace{-1.8em}
 \begin{center}
-
-% ── Replace this with your screenshot ──
-% 1. Export your draw.io diagram as PNG (File → Export as → PNG, 2x scale)
-% 2. Save as "architecture.png" in the same folder as this .tex file
-% 3. Uncomment the line below and delete the placeholder box
-
-% \includegraphics[width=\textwidth,height=0.78\textheight,keepaspectratio]{architecture.png}
-
-% ── PLACEHOLDER — delete this block after adding your image ──
-\begin{tikzpicture}
-    \draw[kahawaBrown, thick, dashed, rounded corners] (0,0) rectangle (14,6.5);
-    \node[text=gray, font=\Large] at (7,3.25) {
-        \parbox{10cm}{\centering
-            \textbf{YOUR ARCHITECTURE DIAGRAM HERE}\\[0.5em]
-            \normalsize Export from draw.io as PNG\\
-            and replace this placeholder\\[0.5em]
-            \small File → Export as → PNG (2x scale)\\
-            Save as \texttt{architecture.png}
-        }
-    };
-\end{tikzpicture}
-% ── END PLACEHOLDER ──
-
+\includegraphics[width=\textwidth,height=1.0\textheight,keepaspectratio]{architecture.png}
 \end{center}
 
-\vspace{-0.3em}
-{\footnotesize \textcolor{gcpBlue}{\faLink\ \href{https://viewer.diagrams.net/?tags=\%7B\%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=kahawa-roots-architecture.drawio&dark=auto}{Click here for interactive architecture diagram}}}
+\vspace{-0.6em}
+{\footnotesize \textcolor{gcpBlue}{\faLink\ \href{https://github.com/ShreehariA/Kahawa-Roots-Pre-Interview-Task/blob/main/kahawa-roots-architecture.png}{Click here for interactive architecture diagram}}}
 
 \end{frame}
 
@@ -372,59 +334,52 @@ the founders (Rupal \& Cetric) aren't developers — so the system has two simpl
 % SLIDE 5: WHAT DOES ALL THIS MEAN? (Plain English)
 % ══════════════════════════════════════════════════════════════
 \begin{frame}{What Does All This Actually Mean?}
-
+\scriptsize
 \begin{columns}[T]
 
 \begin{column}{0.48\textwidth}
 
 \textbf{\faCubes\ Architecture Concepts}
-\vspace{0.3em}
+\vspace{0.2em}
 
-\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{\textcolor{kahawaBrown}{Microservices}} — instead of one big app, we split into 3 small independent ones (admin, API, QR page). if one breaks, the others keep running.
 
-    \item[Microservices] \scriptsize instead of one big application, we split into 3 small independent apps — admin panel, backend API, and QR page. if one breaks or needs updating, the others keep running. like separate kitchens in a restaurant.
+    \item \textbf{\textcolor{kahawaBrown}{Cloud Functions}} — code that runs \textit{only} when new data arrives. no server to manage, no cost when idle.
 
-    \item[Cloud Functions] \scriptsize a small piece of code that runs \textit{only} when new data arrives in storage. no server to manage, no cost when idle. think of it like a light that turns on only when someone walks in.
+    \item \textbf{\textcolor{kahawaBrown}{REST API}} — the ``messenger'' between the admin form and database. checks, cleans, and passes data along.
 
-    \item[REST API] \scriptsize the ``messenger'' between the admin form and the database. when you submit data, the API checks it, cleans it, and passes it along. like a receptionist who filters visitors before they enter.
+    \item \textbf{\textcolor{kahawaBrown}{PostgreSQL}} — a database like a smart spreadsheet. stores shipments in organised tables with relationships.
 
-    \item[PostgreSQL] \scriptsize a database — like a very smart spreadsheet. it stores all shipment data in organised tables with relationships. e.g. each shipment links to a farmer, each farmer has stages.
-
-    \item[Medallion Architecture] \scriptsize data goes through 3 layers: \textcolor{bronzeColor}{\textbf{Bronze}} (raw, untouched backup) → \textcolor{silverColor}{\textbf{Silver}} (cleaned and validated) → \textcolor{goldColor}{\textbf{Gold}} (ready for customers to see). ensures no bad data ever reaches the QR page.
-
-\end{description}
+    \item \textbf{\textcolor{kahawaBrown}{Medallion Architecture}} — data flows through 3 layers: \textcolor{bronzeColor}{\textbf{Bronze}} (raw backup) → \textcolor{silverColor}{\textbf{Silver}} (cleaned) → \textcolor{goldColor}{\textbf{Gold}} (customer-facing). no bad data reaches the QR page.
+\end{itemize}
 
 \end{column}
 
 \begin{column}{0.48\textwidth}
 
 \textbf{\faLock\ Operations \& Security}
+\vspace{0.2em}
+
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{\textcolor{kahawaBrown}{IAM}} — controls \textit{who} can do \textit{what}. admins add shipments, public can only view QR pages.
+
+    \item \textbf{\textcolor{kahawaBrown}{Terraform (IaC)}} — infra defined in code, not clicked manually. one command rebuilds the whole system.
+
+    \item \textbf{\textcolor{kahawaBrown}{CI/CD}} — every code push is auto-tested and deployed. no manual uploads, no ``works on my laptop'' issues.
+
+    \item \textbf{\textcolor{kahawaBrown}{Secret Manager}} — stores passwords \& API keys securely. no accidental credential leaks.
+\end{itemize}
+
 \vspace{0.3em}
-
-\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
-
-    \item[IAM (Identity \& Access)] \scriptsize controls \textit{who} can do \textit{what}. e.g. admins can add shipments, but the public can only view QR pages. like a key card system in an office — different doors for different people.
-
-    \item[Terraform (IaC)] \scriptsize instead of clicking buttons to set up servers manually, we write a config file that does it automatically. if we need to rebuild everything, one command recreates the whole system. like a recipe vs cooking from memory.
-
-    \item[CI/CD (GitHub Actions)] \scriptsize every time we push code, it's automatically tested and deployed. no manual uploads, no ``it works on my laptop'' problems. like an assembly line for software.
-
-    \item[Secret Manager] \scriptsize stores passwords and API keys securely. nobody can accidentally see or leak database credentials. like a safe inside the server room.
-
-\end{description}
-
-\vspace{0.5em}
-
 \textbf{\faChartLine\ Future Plans}
-\vspace{0.3em}
+\vspace{0.2em}
 
-\begin{description}[leftmargin=0pt, labelwidth=0pt, font=\small\bfseries\color{kahawaBrown}]
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item \textbf{\textcolor{kahawaBrown}{BigQuery}} — analytics when we have enough data. ``fastest shipping regions?'' ``transit time trends?''
 
-    \item[BigQuery] \scriptsize when we have enough data — analytics. ``which region produces the fastest shipments?'' or ``average transit time trends''. not needed now, but the architecture is ready for it.
-
-    \item[Data Dashboard] \scriptsize a visual dashboard (Tableau/Looker Studio) for founders to see charts and trends without touching the database. planned once there's enough shipment history.
-
-\end{description}
+    \item \textbf{\textcolor{kahawaBrown}{Dashboard}} — Tableau/Looker Studio for founders to see charts without touching the database.
+\end{itemize}
 
 \end{column}
 

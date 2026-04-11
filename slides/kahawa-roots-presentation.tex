@@ -133,8 +133,10 @@
 \begin{column}{0.55\textwidth}
     \vspace{1em}
     {\LARGE\textbf{\textcolor{kahawaBrown}{Kahawa Roots}}}\\[0.3em]
-    {\large Traceability Platform}\\[0.1em]
-    {\small\textit{Tracking Coffee from Kenya's Farms to the UK}}\\[1.5em]
+    {\large Traceability Platform}\\[0.3em]
+    {\small\textit{Track coffee from a Kenyan farm to a UK cup —}}\\[0.1em]
+    {\small\textit{and let anyone scan a QR code to see the journey.}}\\[0.4em]
+    {\footnotesize\textcolor{kahawaGreen}{\faLeaf\ Transparent traceability builds buyer trust and supports premium pricing.}}\\[1.0em]
 
     {\normalsize\textbf{Shree Hari Anbazhagan}}\\[0.5em]
     \begin{tabular}{@{}ll}
@@ -148,20 +150,16 @@
 
 \begin{column}{0.42\textwidth}
     \vspace{1em}
-    \begin{block}{\faRocket\ Proof: I've Built This Before}
+    \begin{block}{Proof of Concept}
         \small
-        My live full-stack project on the \textbf{same GCP infrastructure} I'm proposing:
+        I've already built a live system on the \textbf{same stack} I'm proposing:
 
-        \vspace{0.3em}
-        \begin{itemize}
-            \item[\faGlobe] \scriptsize{\href{https://deltaed-frontend-93684845515.europe-west2.run.app}{\textcolor{gcpBlue}{DeltaEd — Live on GCP Cloud Run}}}
-            \item[\faCloud] GCP Cloud Run, \texttt{europe-west2} (London)
-            \item[\faDocker] Dockerized, full stack
-            \item[\faCode] React + Python + BigQuery
-        \end{itemize}
+        \vspace{0.4em}
+        \scriptsize{\href{https://deltaed-frontend-93684845515.europe-west2.run.app}{\textcolor{gcpBlue}{DeltaEd — Live on GCP Cloud Run}}}\\[0.2em]
+        \scriptsize{GCP • React • Python • BigQuery}
 
-        \vspace{0.3em}
-        \scriptsize{\textit{happy to walk through the architecture if interested.}}
+        \vspace{0.4em}
+        \scriptsize{\textit{(Built on a similar stack)}}
     \end{block}
 \end{column}
 
@@ -172,29 +170,24 @@
 % ══════════════════════════════════════════════════════════════
 % SLIDE 2: HOW I'D BUILD THIS + NON-TECHNICAL ACCESS
 % ══════════════════════════════════════════════════════════════
-\begin{frame}{How I'd Build This}
+\begin{frame}{How Kahawa Roots Tracks Coffee, End to End}
 \small
 \begin{columns}[T]
 
 \begin{column}{0.55\textwidth}
 
-\textbf{\faDatabase\ How Data is Stored \& Recorded}
-\vspace{-0.6em}
-\begin{itemize}\setlength{\itemsep}{1pt}
-    \item every shipment gets a unique ID when first recorded
-    \item raw data (form/CSV) → \textbf{Cloud Storage} as immutable backup
-    \item \textbf{Cloud Function} auto-triggers, cleans \& validates
-    \item clean data → \textbf{Cloud SQL (PostgreSQL)} — 3 tables: \texttt{farmers}, \texttt{shipments}, \texttt{shipment\_stages}
-    \item each stage (farm → processing → export → UK) is a row with timestamps and GPS
-\end{itemize}
+\textbf{\faRoute\ The Journey in 4 Steps}
+\vspace{0.2em}
 
-\vspace{-0.2em}
-\textbf{\faQrcode\ QR Code → Webpage}
-\vspace{-0.6em}
-\begin{itemize}\setlength{\itemsep}{1pt}
-    \item QR generated per shipment, encodes URL like \texttt{/trace/SH-2026-001}
-    \item scan opens public page: \textbf{map} (Kenya → UK) + timeline + farmer info
-\end{itemize}
+\begin{enumerate}\setlength{\itemsep}{2pt}
+    \item \textbf{Data comes in} — Farmer or admin enters details via web form or CSV
+    \item \textbf{Validated \& cleaned} — Every field checked automatically; invalid rows rejected, logged for review
+    \item \textbf{Stored safely} — Raw backup kept untouched, clean data in DB with timestamps \& GPS at each stage
+    \item \textbf{Customers see it} — Each shipment gets a QR code linking to a public page with map, timeline \& farmer info
+\end{enumerate}
+
+\vspace{0.2em}
+{\scriptsize\textit{Data flows in → validation → storage → accessible via QR.}}
 
 \end{column}
 
@@ -202,30 +195,32 @@
 
 \textbf{\faUserFriends\ Non-Technical Data Entry}
 
-\vspace{0.3em}
-\begin{block}{\faWpforms\ Option 1: Web Form}
-    \vspace{-0.3em}
+\vspace{0.1em}
+{\scriptsize Designed for non-technical users:}
+
+\vspace{0.2em}
+\begin{block}{\faWpforms\ Web Form}
     \begin{itemize}\setlength{\itemsep}{0pt}
-        \item simple form on admin dashboard
-        \item one shipment at a time
-        \item no coding, no terminal, no SQL
+        \item One shipment at a time via admin dashboard
+        \item No coding needed
     \end{itemize}
-    \vspace{-0.3em}
+    \vspace{-0.4em}
 \end{block}
 
-\vspace{-0.4em}
-\begin{block}{\faFileExcel\ Option 2: CSV/Excel Upload}
-    \vspace{-0.3em}
+\vspace{-0.5em}
+\begin{block}{\faFileExcel\ CSV/Excel Upload}
     \begin{itemize}\setlength{\itemsep}{0pt}
-        \item drag and drop a spreadsheet
-        \item bulk import for cooperative batch data
-        \item auto-validates every row
+        \item Drag-and-drop bulk import
+        \item Auto-validates every row
     \end{itemize}
-    \vspace{-0.3em}
+    \vspace{-0.4em}
 \end{block}
 
-\vspace{-0.4em}
-{\scriptsize\textit{both feed into same REST API → same validation → same DB.}}
+\vspace{-0.5em}
+{\scriptsize\textit{Both feed the same pipeline — same validation, same database.}}
+
+\vspace{0.2em}
+{\scriptsize\textbf{Access:} Admins manage data, public users view via QR.}
 
 \end{column}
 
@@ -245,30 +240,22 @@
 \textbf{\faTools\ Tech Stack \& Why}
 
 \vspace{0.2em}
-\scriptsize
-\begin{tabular}{p{1.6cm} p{4.8cm}}
+{\scriptsize
+\begin{tabular}{p{1.4cm} p{4.8cm}}
     \toprule
     \textbf{Component} & \textbf{Choice \& Why} \\
     \midrule
-    \textbf{Cloud} & \textbf{GCP} — London region, \textcolor{kahawaGreen}{\textbf{\$200K credits}}, GDPR, scales to zero \\
-    \midrule
-    \textbf{Backend} & \textbf{Python + REST API} on Cloud Run \\
-    \midrule
-    \textbf{Frontend} & \textbf{Next.js (React)} — SSR, fast QR loads \\
-    \midrule
-    \textbf{Database} & \textbf{Cloud SQL (PostgreSQL)} — sub-10ms reads \\
-    \midrule
-    \textbf{Storage} & \textbf{Cloud Storage} — immutable raw backup \\
-    \midrule
-    \textbf{Processing} & \textbf{Cloud Functions} — event-driven \\
-    \midrule
-    \textbf{IaC} & \textbf{Terraform} — repeatable infra \\
-    \midrule
-    \textbf{CI/CD} & \textbf{GitHub Actions} — auto deploy \\
-    \midrule
-    \textbf{Maps} & \textbf{Google Maps API} — native to GCP \\
+    \textbf{Cloud} & \textbf{GCP} — London (europe-west2), GDPR-compliant, \textcolor{kahawaGreen}{\textbf{\$200K startup credits}}, scales to zero \\
+    \textbf{Backend} & \textbf{Python + REST API} on Cloud Run — simple, widely known, easy to hire for \\
+    \textbf{Frontend} & \textbf{Next.js} — server-side rendering so QR pages load instantly \\
+    \textbf{Database} & \textbf{Cloud SQL (Postgres)} — reliable, free-tier, sub-10ms reads \\
+    \textbf{Storage} & \textbf{Cloud Storage} — cheap, immutable backup of every raw upload \\
+    \textbf{Processing} & \textbf{Cloud Functions} — runs only when data arrives, pay per use \\
+    \textbf{IaC / CI} & \textbf{Terraform + GitHub Actions} — infra in code, auto-deploy on push \\
+    \textbf{Maps} & \textbf{Google Maps API} — native to GCP, shows the farm-to-cup journey \\
     \bottomrule
 \end{tabular}
+}
 
 \end{column}
 
@@ -276,20 +263,20 @@
 
 \textbf{\faLayerGroup\ Medallion Architecture}
 
-\vspace{0.2em}
+\vspace{0.1em}
 \begin{tikzpicture}[
-    layer/.style={rounded corners=4pt, minimum width=5.2cm, minimum height=0.85cm, text=white, font=\scriptsize\bfseries, align=center},
+    layer/.style={rounded corners=4pt, minimum width=5.0cm, minimum height=0.7cm, text=white, font=\scriptsize\bfseries, align=center},
     arrow/.style={->, thick, gray}
 ]
-    \node[layer, fill=bronzeColor] (bronze) at (0,2.2) {Bronze Layer \\ \tiny Raw CSV/JSON in Cloud Storage};
-    \node[layer, fill=silverColor] (silver) at (0,1.1) {Silver Layer \\ \tiny Clean data in PostgreSQL};
-    \node[layer, fill=goldColor] (gold) at (0,0) {Gold Layer \\ \tiny QR Pages + BigQuery (future)};
+    \node[layer, fill=bronzeColor] (bronze) at (0,1.8) {Bronze \\ \tiny Raw CSV/JSON → Cloud Storage};
+    \node[layer, fill=silverColor] (silver) at (0,0.9) {Silver \\ \tiny Clean data → PostgreSQL};
+    \node[layer, fill=goldColor] (gold) at (0,0) {Gold \\ \tiny QR Pages + BigQuery (future)};
 
     \draw[arrow] (bronze) -- (silver);
     \draw[arrow] (silver) -- (gold);
 \end{tikzpicture}
 
-\vspace{0.4em}
+\vspace{0.2em}
 \textbf{\faCode\ Bonus: Database Schema}
 
 {\ttfamily\fontsize{4.5pt}{5.5pt}\selectfont\color{textDark}
@@ -305,7 +292,8 @@
 \quad created\_at TIMESTAMP DEFAULT NOW() ); \\[0.2em]
 \textcolor{kahawaGreen}{\textbf{CREATE TABLE}} shipment\_stages ( \\
 \quad id UUID PK, shipment\_id UUID FK→shipments, \\
-\quad stage VARCHAR, location VARCHAR, notes TEXT ); \\
+\quad stage VARCHAR, location VARCHAR, \\
+\quad timestamp TIMESTAMP, notes TEXT ); \\
 \end{tabular}
 }
 
@@ -326,59 +314,69 @@
 \end{center}
 
 \vspace{-0.6em}
-{\footnotesize \textcolor{gcpBlue}{\faLink\ \href{https://github.com/ShreehariA/Kahawa-Roots-Pre-Interview-Task/blob/main/kahawa-roots-architecture.png}{Click here for interactive architecture diagram}}}
+{\footnotesize \textcolor{gcpBlue}{\faLink\ \href{https://github.com/ShreehariA/Kahawa-Roots-Pre-Interview-Task/blob/main/kahawa-roots-architecture.png}{Click here for full-resolution architecture diagram}}}
 
 \end{frame}
 
 % ══════════════════════════════════════════════════════════════
 % SLIDE 5: WHAT DOES ALL THIS MEAN? (Plain English)
 % ══════════════════════════════════════════════════════════════
-\begin{frame}{What Does All This Actually Mean?}
+\begin{frame}{Why These Choices Work for Kahawa Roots}
 \scriptsize
 \begin{columns}[T]
 
 \begin{column}{0.48\textwidth}
 
-\textbf{\faCubes\ Architecture Concepts}
-\vspace{0.2em}
+\textbf{\faPoundSign\ Cheap at Small Scale}
+\vspace{0.1em}
 
-\begin{itemize}\setlength{\itemsep}{2pt}
-    \item \textbf{\textcolor{kahawaBrown}{Microservices}} — instead of one big app, we split into 3 small independent ones (admin, API, QR page). if one breaks, the others keep running.
+\begin{itemize}\setlength{\itemsep}{3pt}
+    \item \textbf{\textcolor{kahawaBrown}{Cloud Run}} scales to zero — when nobody's using it, you pay nothing. No idle infrastructure costs.
 
-    \item \textbf{\textcolor{kahawaBrown}{Cloud Functions}} — code that runs \textit{only} when new data arrives. no server to manage, no cost when idle.
+    \item \textbf{\textcolor{kahawaBrown}{Cloud Functions}} only run when data arrives — a few pence per execution, not a monthly server bill.
 
-    \item \textbf{\textcolor{kahawaBrown}{REST API}} — the ``messenger'' between the admin form and database. checks, cleans, and passes data along.
+    \item \textbf{\textcolor{kahawaBrown}{GCP}} — eligible for startup credits (up to \$200K). The platform could run for months before costing anything.
 
-    \item \textbf{\textcolor{kahawaBrown}{PostgreSQL}} — a database like a smart spreadsheet. stores shipments in organised tables with relationships.
+    \item \textbf{\textcolor{kahawaBrown}{PostgreSQL}} — free-tier eligible, battle-tested, no licensing fees.
+\end{itemize}
 
-    \item \textbf{\textcolor{kahawaBrown}{Medallion Architecture}} — data flows through 3 layers: \textcolor{bronzeColor}{\textbf{Bronze}} (raw backup) → \textcolor{silverColor}{\textbf{Silver}} (cleaned) → \textcolor{goldColor}{\textbf{Gold}} (customer-facing). no bad data reaches the QR page.
+\vspace{0.1em}
+\textbf{\faTools\ Easy to Maintain}
+\vspace{0.1em}
+
+\begin{itemize}\setlength{\itemsep}{3pt}
+    \item \textbf{\textcolor{kahawaBrown}{3 small apps}} instead of 1 big one — if the QR page needs updating, the admin panel stays untouched.
+
+    \item \textbf{\textcolor{kahawaBrown}{Infra as code}} — the entire system is defined in config files. If something breaks, one command rebuilds it.
+
+    \item \textbf{\textcolor{kahawaBrown}{Auto-deploy}} — push code → it's tested and live. No manual uploads, no human error.
 \end{itemize}
 
 \end{column}
 
 \begin{column}{0.48\textwidth}
 
-\textbf{\faLock\ Operations \& Security}
-\vspace{0.2em}
+\textbf{\faShieldAlt\ Safe \& Reliable}
+\vspace{0.1em}
 
-\begin{itemize}\setlength{\itemsep}{2pt}
-    \item \textbf{\textcolor{kahawaBrown}{IAM}} — controls \textit{who} can do \textit{what}. admins add shipments, public can only view QR pages.
+\begin{itemize}\setlength{\itemsep}{3pt}
+    \item \textbf{\textcolor{kahawaBrown}{Raw data is never deleted}} — every CSV and form submission is backed up untouched. If anything goes wrong, the original data is always there.
 
-    \item \textbf{\textcolor{kahawaBrown}{Terraform (IaC)}} — infra defined in code, not clicked manually. one command rebuilds the whole system.
+    \item \textbf{\textcolor{kahawaBrown}{Two-step validation}} — data is checked at entry \textit{and} again before it reaches the database. Bad rows are rejected with clear error messages.
 
-    \item \textbf{\textcolor{kahawaBrown}{CI/CD}} — every code push is auto-tested and deployed. no manual uploads, no ``works on my laptop'' issues.
+    \item \textbf{\textcolor{kahawaBrown}{Passwords stored securely}} — database credentials and API keys live in a vault, never in the code.
 
-    \item \textbf{\textcolor{kahawaBrown}{Secret Manager}} — stores passwords \& API keys securely. no accidental credential leaks.
+    \item \textbf{\textcolor{kahawaBrown}{UK data centre}} — everything runs in London (europe-west2). Data stays in the UK, GDPR-friendly.
 \end{itemize}
 
-\vspace{0.3em}
-\textbf{\faChartLine\ Future Plans}
-\vspace{0.2em}
+\vspace{0.1em}
+\textbf{\faChartLine\ Scales When You're Ready}
+\vspace{0.1em}
 
-\begin{itemize}\setlength{\itemsep}{2pt}
-    \item \textbf{\textcolor{kahawaBrown}{BigQuery}} — analytics when we have enough data. ``fastest shipping regions?'' ``transit time trends?''
+\begin{itemize}\setlength{\itemsep}{3pt}
+    \item \textbf{\textcolor{kahawaBrown}{BigQuery}} ready — when there's enough data, plug in analytics without rebuilding anything.
 
-    \item \textbf{\textcolor{kahawaBrown}{Dashboard}} — Tableau/Looker Studio for founders to see charts without touching the database.
+    \item \textbf{\textcolor{kahawaBrown}{Dashboard}} — Looker Studio for founders to see trends without touching the database.
 \end{itemize}
 
 \end{column}

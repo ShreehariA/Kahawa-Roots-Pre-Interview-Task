@@ -33,9 +33,10 @@ Bronze (Cloud Storage)  →  Silver (Cloud SQL/PostgreSQL)  →  Gold (QR Pages)
 
 **Key components:**
 - **3 Cloud Run microservices** — Admin frontend, Backend API, Public QR pages
+- **Flutter field app (APK)** — Offline-first single-shipment capture; SQLite outbox syncs to REST API when online
 - **Cloud Functions** — Event-driven processing triggered on bucket upload
 - **Two-gate validation** — API-level schema checks + Cloud Functions business logic
-- **Two ingestion routes** — Web form (single shipment) + CSV/Excel upload (bulk)
+- **Ingestion routes** — Flutter (field, offline), web form (single shipment), CSV/Excel bulk (office)
 - **Terraform** for IaC, **GitHub Actions** for CI/CD
 
 ## How to View
